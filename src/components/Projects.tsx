@@ -3,7 +3,7 @@
 import React, { useState, memo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { ExternalLink, Layout, Github } from "lucide-react";
+import { ExternalLink, Layout } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
 import dynamic from "next/dynamic";
 
