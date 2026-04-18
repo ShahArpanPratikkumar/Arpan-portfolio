@@ -1,0 +1,208 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-bg:            var(--bg);
+  --color-bg-light:      var(--bg-light);
+  --color-card:          var(--card);
+  --color-text:          var(--text);
+  --color-muted:         var(--muted);
+  --color-border:        var(--border);
+  --color-accent:        var(--accent);
+  --color-theme-glow:    var(--theme-glow);
+  --animation-slow-spin: slow-spin 20s linear infinite;
+  --keyframes-slow-spin: {
+    from { transform: rotate(0deg) scale(1); }
+    50%  { transform: rotate(180deg) scale(1.1); }
+    to   { transform: rotate(360deg) scale(1); }
+  }
+}
+
+/* ─────────────────────────────────────────
+   APPLE/STRIPE LEVEL DESIGN SYSTEM
+───────────────────────────────────────── */
+
+:root,
+.dark {
+  /* Dark Theme Variables */
+  --bg:           #0a0a0a;
+  --card:         #111111;
+  --text:         #ffffff;         /* Pure white */
+  --muted:        #d1d5db;         /* gray-300 equivalent */
+  --border:       rgba(255, 255, 255, 0.08);
+  --accent:       #f59e0b;
+  --accent-soft:  rgba(245, 158, 11, 0.12);
+  --glass-bg:     rgba(17, 17, 17, 0.6);
+  --shadow-glow:  0 0 30px rgba(245, 158, 11, 0.15);
+  --ring-hover:   0 0 0 1px rgba(245, 158, 11, 0.3);
+  
+  /* Layered Background System */
+  --bg-gradient:  linear-gradient(135deg, #0a0a0a, #111111, #000000);
+  --theme-glow:   rgba(245, 158, 11, 0.08); /* Soft orange */
+}
+
+.light {
+  /* Light Theme Variables */
+  --bg:           #f8fafc;
+  --card:         #ffffff;
+  --text:         #111111;         /* Off-black */
+  --muted:        #374151;         /* gray-700 equivalent */
+  --border:       rgba(0, 0, 0, 0.06);
+  --accent:       #f59e0b;         /* Maintain accent color */
+  --accent-soft:  rgba(245, 158, 11, 0.08);
+  --glass-bg:     rgba(255, 255, 255, 0.8);
+  --shadow-glow:  0 10px 30px rgba(0, 0, 0, 0.05); /* Soft shadow instead of heavy glow */
+  --ring-hover:   0 0 0 1px rgba(245, 158, 11, 0.2);
+
+  /* Layered Background System */
+  --bg-gradient:  linear-gradient(135deg, #f8fafc, #ffffff, #f1f5f9);
+  --theme-glow:   rgba(59, 130, 246, 0.05); /* Soft blue */
+}
+
+/* ── Base Enhancements ── */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  /* Using transparent because background layer is handled by Background3D */
+  background-color: transparent !important; 
+  color: var(--text);
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  line-height: 1.5;
+  transition: color 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bg-base-gradient {
+  background: var(--bg-gradient);
+  transition: background 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Hide native cursor on desktop - custom cursor will replace it */
+@media (min-width: 1024px) {
+  html, body, * {
+    cursor: none !important;
+  }
+}
+
+/* ── Apple-Type Spacing & Hierarchy ── */
+h1, h2, h3, h4 {
+  letter-spacing: -0.04em;
+  font-weight: 800;
+}
+
+/* ── Premium Glassmorphism ── */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+}
+
+.glass-hover {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hover-card {
+  transition:
+    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.4s ease,
+    border-color 0.4s ease;
+  will-change: transform;
+}
+
+.hover-card:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: var(--shadow-glow), 0 20px 40px rgba(0, 0, 0, 0.1);
+  border-color: rgba(245, 158, 11, 0.3);
+}
+
+/* ── Custom Buttons (Explicit for Stability) ── */
+.premium-btn-primary {
+  position: relative;
+  overflow: hidden;
+  padding: 1rem 2.5rem;
+  border-radius: 1rem;
+  font-weight: 900;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: var(--accent);
+  color: #000000; /* Always black for impact */
+}
+
+.premium-btn-primary:hover {
+  box-shadow: 0 0 30px rgba(245, 158, 11, 0.4);
+  transform: scale(1.03);
+  filter: brightness(1.1);
+}
+
+.premium-btn-primary:active {
+  transform: scale(0.95);
+}
+
+.premium-btn-secondary {
+  position: relative;
+  overflow: hidden;
+  padding: 1rem 2.5rem;
+  border-radius: 1rem;
+  font-weight: 900;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: var(--glass-bg);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(20px);
+  color: var(--text);
+}
+
+.premium-btn-secondary:hover {
+  background-color: var(--accent-soft);
+  border-color: rgba(245, 158, 11, 0.3);
+  transform: scale(1.03);
+  color: var(--text);
+}
+
+.premium-btn-secondary:active {
+  transform: scale(0.95);
+}
+
+/* ── High-End Interactions ── */
+.magnetic {
+  transition: transform 0.2s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+/* ── GPU-Accelerated Animations ── */
+.gpu-accel {
+  will-change: transform, opacity;
+  transform: translateZ(0);
+}
+
+/* ── Custom Scrollbar (Minimal) ── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+/* ── Seletions ── */
+::selection {
+  background: var(--accent);
+  color: #000;
+}

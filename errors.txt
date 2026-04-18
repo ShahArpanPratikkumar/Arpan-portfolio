@@ -1,0 +1,108 @@
+
+> portfolio@0.1.0 lint
+> eslint
+
+
+C:\Users\shahp\OneDrive\Desktop\New folder (4)\src\app\page.tsx
+  3:10  warning  'AnimatePresence' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\shahp\OneDrive\Desktop\New folder (4)\src\components\Background3D.tsx
+  4:10  warning  'motion' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\shahp\OneDrive\Desktop\New folder (4)\src\components\Education.tsx
+  27:40  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\shahp\OneDrive\Desktop\New folder (4)\src\components\Footer.tsx
+   6:9   warning  'currentYear' is assigned a value but never used                 @typescript-eslint/no-unused-vars
+  18:18  error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+C:\Users\shahp\OneDrive\Desktop\New folder (4)\src\components\NewContact.tsx
+    3:28  warning  'useEffect' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      @typescript-eslint/no-unused-vars
+    3:39  warning  'ReactNode' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      @typescript-eslint/no-unused-vars
+    4:45  warning  'useTransform' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-unused-vars
+    9:64  error    Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+   32:45  error    Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+   52:60  error    Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+   78:90  error    Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+  151:22  error    Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+C:\Users\shahp\OneDrive\Desktop\New folder (4)\src\components\NewContact.tsx:151:22
+  149 |   const particles = useMemo(() => {
+  150 |     return Array.from({ length: 15 }).map(() => ({
+> 151 |       duration: 10 + Math.random() * 10,
+      |                      ^^^^^^^^^^^^^ Cannot call impure function
+  152 |       delay: Math.random() * 5,
+  153 |       left: `${Math.random() * 100}%`,
+  154 |       top: `${Math.random() * 100}%`,  react-hooks/purity
+  152:14  error    Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+C:\Users\shahp\OneDrive\Desktop\New folder (4)\src\components\NewContact.tsx:152:14
+  150 |     return Array.from({ length: 15 }).map(() => ({
+  151 |       duration: 10 + Math.random() * 10,
+> 152 |       delay: Math.random() * 5,
+      |              ^^^^^^^^^^^^^ Cannot call impure function
+  153 |       left: `${Math.random() * 100}%`,
+  154 |       top: `${Math.random() * 100}%`,
+  155 |     }));                                     react-hooks/purity
+  153:16  error    Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+C:\Users\shahp\OneDrive\Desktop\New folder (4)\src\components\NewContact.tsx:153:16
+  151 |       duration: 10 + Math.random() * 10,
+  152 |       delay: Math.random() * 5,
+> 153 |       left: `${Math.random() * 100}%`,
+      |                ^^^^^^^^^^^^^ Cannot call impure function
+  154 |       top: `${Math.random() * 100}%`,
+  155 |     }));
+  156 |   }, []);                                                                            react-hooks/purity
+  154:15  error    Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+C:\Users\shahp\OneDrive\Desktop\New folder (4)\src\components\NewContact.tsx:154:15
+  152 |       delay: Math.random() * 5,
+  153 |       left: `${Math.random() * 100}%`,
+> 154 |       top: `${Math.random() * 100}%`,
+      |               ^^^^^^^^^^^^^ Cannot call impure function
+  155 |     }));
+  156 |   }, []);
+  157 |                                                                                                                      react-hooks/purity
+  163:9   warning  'showToast' is assigned a value but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             @typescript-eslint/no-unused-vars
+  245:16  error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            react/no-unescaped-entities
+  254:16  error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            react/no-unescaped-entities
+
+C:\Users\shahp\OneDrive\Desktop\New folder (4)\src\components\Projects.tsx
+   5:8   warning  'Image' is defined but never used         @typescript-eslint/no-unused-vars
+  31:53  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\shahp\OneDrive\Desktop\New folder (4)\src\components\Resume.tsx
+  53:97  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+C:\Users\shahp\OneDrive\Desktop\New folder (4)\src\components\TechStack.tsx
+  39:59  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\shahp\OneDrive\Desktop\New folder (4)\src\components\ThemeToggle.tsx
+  13:5  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+C:\Users\shahp\OneDrive\Desktop\New folder (4)\src\components\ThemeToggle.tsx:13:5
+  11 |
+  12 |   useEffect(() => {
+> 13 |     setMounted(true);
+     |     ^^^^^^^^^^ Avoid calling setState() directly within an effect
+  14 |   }, []);
+  15 |
+  16 |   if (!mounted) return <div className="w-10 h-10" />;  react-hooks/set-state-in-effect
+
+??? 24 problems (16 errors, 8 warnings)
+
