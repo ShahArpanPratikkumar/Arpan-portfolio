@@ -12,11 +12,9 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL
-  ? process.env.NEXT_PUBLIC_SITE_URL
-  : process.env.VERCEL_URL
-  ? `https://${process.env.VERCEL_URL}`
-  : "https://arpan-portfolio-five.vercel.app";
+const BASE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL ??
+  "https://arpan-portfolio-five.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),

@@ -2,11 +2,9 @@ import type { MetadataRoute } from "next";
 
 // Uses NEXT_PUBLIC_SITE_URL env var (set in Vercel dashboard) → falls back to
 // VERCEL_URL (auto-set by Vercel on every deployment) → local fallback
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL
-  ? process.env.NEXT_PUBLIC_SITE_URL
-  : process.env.VERCEL_URL
-  ? `https://${process.env.VERCEL_URL}`
-  : "https://arpan-portfolio-five.vercel.app";
+const BASE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL ??
+  "https://arpan-portfolio-five.vercel.app";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
