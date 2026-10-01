@@ -33,6 +33,9 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Arpan Shah", url: BASE_URL }],
   creator: "Arpan Shah",
+  verification: {
+    google: "google238d1d2572c10429",
+  },
   alternates: {
     canonical: BASE_URL,
   },
