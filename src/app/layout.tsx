@@ -16,7 +16,7 @@ const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL
   ? process.env.NEXT_PUBLIC_SITE_URL
   : process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
-  : "http://localhost:3000";
+  : "https://arpan-portfolio-five.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
