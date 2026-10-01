@@ -12,12 +12,55 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const BASE_URL = "https://arpanshah.vercel.app"; // 🔁 Update to your actual domain
+
 export const metadata: Metadata = {
-  title: "Arpan Shah | Full Stack Developer",
-  description: "Arpan Shah | Full Stack Developer | Building Modern Web Experiences",
+  metadataBase: new URL(BASE_URL),
+  title: {
+    default: "Arpan Shah | Full Stack Developer",
+    template: "%s | Arpan Shah",
+  },
+  description:
+    "Arpan Shah — Full Stack Developer crafting modern web experiences with clean UI and powerful backend systems.",
+  keywords: [
+    "Arpan Shah",
+    "Full Stack Developer",
+    "React",
+    "Next.js",
+    "TypeScript",
+    "Portfolio",
+    "Web Developer",
+  ],
+  authors: [{ name: "Arpan Shah", url: BASE_URL }],
+  creator: "Arpan Shah",
+  alternates: {
+    canonical: BASE_URL,
+  },
   openGraph: {
+    type: "website",
+    url: BASE_URL,
+    siteName: "Arpan Shah Portfolio",
     title: "Arpan Shah | Full Stack Developer",
-    description: "Building modern web experiences with clean UI and powerful backend systems",
+    description:
+      "Building modern web experiences with clean UI and powerful backend systems.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Arpan Shah | Full Stack Developer",
+    description:
+      "Building modern web experiences with clean UI and powerful backend systems.",
+    creator: "@arpanshah",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-snippet": -1,
+      "max-image-preview": "large",
+      "max-video-preview": -1,
+    },
   },
   icons: {
     icon: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>A</text></svg>",
